@@ -18,12 +18,8 @@ public class Main {
             SAXParser parser = factory.newSAXParser();  //creating an instance of SAXParser
             ParserHandler handler = new ParserHandler(); //creating an instance of handler
             parser.parse(input, handler); //starting parsing
-        } catch (SAXException sax_e){
+        } catch (SAXException | ParserConfigurationException | IOException sax_e){
             sax_e.printStackTrace();
-        } catch (ParserConfigurationException pce){
-            pce.printStackTrace();
-        } catch (IOException ioe){
-            ioe.printStackTrace();
         }
     }
 }
